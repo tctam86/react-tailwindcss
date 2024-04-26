@@ -1,61 +1,70 @@
+import { LeaderboardItems } from "@/components/LeaderboardItems";
+import { VlogBox } from "@/components/VlogBox";
 import Image from "next/image";
+
+function Button(props: { children?: React.ReactNode; className?: string }) {
+  return (
+    <button
+      className={
+        "bg-none text-xl hover:underline underline-offset-8 transition-all hover:font-bold" +
+        props.className
+      }
+    >
+      {props.children}
+    </button>
+  );
+}
 
 export default function Home() {
   return (
-    <main className="flex w-screen h-screen flex-col">
-      <div className="flex  justify-end w-screen bg-white px-5 mt-2">
-        <button className="px-2">Gmail</button>
-        <button className="px-2">Images</button>
-        <svg
-          className="px-2 py-2 relative w-12"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-          />
-        </svg>
-        <button className="px-4 bg-blue-500 rounded-lg text-white py-2 font-normal hover:bg-blue-600 transition-all active:scale-95">
-          Sign in
-        </button>
+    <main className="flex w-screen h-screen flex-row">
+      <div className="w-1/4 h-full bg-gray-100 flex flex-col overflow-auto items-center">
+        <img src="/Group_7.png" className="w-64 rounded-full h-64 m-12" />
+
+        <h1 className="text-black text-3xl font-bold pb-5">Tran Cong Tam</h1>
+        <h2 className="pb-5 text-xl">
+          <span className="font-bold">UX</span>/
+          <span className="font-bold">UI</span>/Web Application Developer
+        </h2>
+        <div className="flex flex-col items-center gap-2">
+          <Button className="">HOME</Button> <br></br>
+          <Button className="">ABOUT</Button> <br></br>
+          <Button className="">CONTACT</Button> <br></br>
+          <Button className="">SERVICE</Button> <br></br>
+          <Button className="">EDUCATION</Button> <br></br>
+          <Button className="">SKILL</Button> <br></br>
+          <Button className="">EXPERIENCE</Button> <br></br>
+          <Button className="">PORTFOLIO</Button> <br></br>
+        </div>
       </div>
-      <div className="flex-auto flex justify-center items-center flex-col mb-12">
-        {/* Phai quang trong div lon moi day duoc  */}
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/325px-Google_2015_logo.svg.png"
-          className="relative w-96 justify-center items-center"
+      <div className="flex flex-col gap-2 py-10">
+        <LeaderboardItems
+          rank={1}
+          name="LozzThinh"
+          chapter={-2}
+          imgSrc="https://st.nettruyentt.com/data/comics/32/vo-luyen-dinh-phong-9068.jpg"
+          link="#"
+          view={1000}
         />
-        <div className="border-solid border border-black/40 rounded-full py-2 mt-7 flex gap-2 px-3 w-full max-w-2xl ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6 opacity-50"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            />
-          </svg>
-          {/* Search bar */}
-          <input type="text" className="!border-none !outline-none flex-auto" />
-        </div>
-        <div className="flex justify-center items-center gap-6 mt-7">
-          <button className="px-4 bg-neutral-200 rounded-sm  py-2 font-normal hover:bg-neutral-300 transition-all active:scale-95">
-            Google Search
-          </button>
-          <button className="px-6 bg-neutral-200 rounded-sm  py-2 font-normal hover:bg-neutral-300 transition-all active:scale-95">
-            I'm Feel Lucky
-          </button>
-        </div>
+        <LeaderboardItems
+          rank={1}
+          name="LozzThinh"
+          chapter={-2}
+          imgSrc="https://st.nettruyentt.com/data/comics/32/vo-luyen-dinh-phong-9068.jpg"
+          link="#"
+          view={1000}
+        />
+        <LeaderboardItems
+          rank={1}
+          name="LozzThinh"
+          chapter={-2}
+          imgSrc="https://st.nettruyentt.com/data/comics/32/vo-luyen-dinh-phong-9068.jpg"
+          link="#"
+          view={1000}
+        />
+      </div>
+      <div>
+        <VlogBox title=" LozzThinh" description="thinh la mot thang lon" view={1000} link="#" />
       </div>
     </main>
   );
